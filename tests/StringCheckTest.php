@@ -1,5 +1,7 @@
 <?php
 
+namespace Trask\Utils\Tests;
+
 use PHPUnit\Framework\TestCase;
 use Trask\Utils\StringCheck;
 
