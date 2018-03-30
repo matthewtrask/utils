@@ -2,7 +2,7 @@
 
 namespace Trask\Utils;
 
-class ArrayCheck
+class ArrayCheck implements CheckProviderInterface
 {
     public function __invoke(array $array)
     {
@@ -11,7 +11,12 @@ class ArrayCheck
 
     public function isArray($array) : bool
     {
-        if (is_array($array)) {
+       return $this->performCheck($array);
+    }
+
+    public function performCheck($value): bool
+    {
+        if ('array' === gettype($value)) {
             return true;
         }
 
