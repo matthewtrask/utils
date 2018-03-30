@@ -1,6 +1,6 @@
 ### STRING CHECKER
 
-[![Travis](https://img.shields.io/travis/USER/REPO.svg)](https://github.com/matthewtrask/utils)
+[![Travis](https://img.shields.io/travis/USER/REPO.svg)](https://travis-ci.org/matthewtrask/string-checker)
 
 Check if a value passed in is a string or not. 
 
