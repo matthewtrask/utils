@@ -1,7 +1,6 @@
 language: php
 
 php:
-  - 7.0
   - 7.1
   - 7.2
   - nightly
@@ -12,3 +11,7 @@ before_script:
 
 script:
   - ./vendor/bin/phpunit --coverage-text
+
+matrix:
+  allow_failures:
+  - php: nightly
