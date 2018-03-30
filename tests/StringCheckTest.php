@@ -1,7 +1,7 @@
 <?php
 
 use PHPUnit\Framework\TestCase;
-use Trask\StringUtils\StringCheck;
+use Trask\Utils\StringCheck;
 
 class StringCheckTest extends TestCase
 {

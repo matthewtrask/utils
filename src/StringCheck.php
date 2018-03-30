@@ -1,6 +1,6 @@
 <?php
 
-namespace Trask\StringUtils;
+namespace Trask\Utils;
 
 class StringCheck
 {
