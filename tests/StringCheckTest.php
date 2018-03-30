@@ -19,4 +19,16 @@ class StringCheckTest extends TestCase
     {
         $this->assertInstanceOf(StringCheck::class, $this->stringCheck);
     }
+
+    public function testIsValueAStringReturnsFalse()
+    {
+        $string = 123;
+        $this->assertFalse($this->stringCheck->isString($string));
+    }
+
+    public function testIsValueAStringReturnsTrue()
+    {
+        $string = 'Matt Trask';
+        $this->assertTrue($this->stringCheck->isString($string));
+    }
 }
