@@ -2,9 +2,19 @@
 
 namespace Trask\Utils;
 
-class ThirteenCheck
+class ThirteenCheck implements CheckProviderInterface
 {
-    const THIRTEEN = 13;
+    const THREE = 0x3;
+    const TEN = 0xa;
+
+    const THIRTEEN = self::TEN + self::THREE;
+
+    private $integerChecker;
+
+    public function __construct()
+    {
+        $this->integerChecker = new IntegerCheck();
+    }
 
     public function __invoke(int $value)
     {
@@ -13,8 +23,15 @@ class ThirteenCheck
 
     public function isThirteen($value) : bool
     {
-        if ($value === self::THIRTEEN) {
-            return true;
+        return $this->performCheck($value);
+    }
+
+    public function performCheck($value) : bool
+    {
+        if ($this->integerChecker->performCheck($value)) {
+            if ($value === self::THIRTEEN) {
+                return true;
+            }
         }
 
         return false;
