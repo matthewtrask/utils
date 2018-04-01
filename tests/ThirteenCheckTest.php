@@ -35,13 +35,13 @@ class ThirteenCheckTest extends TestCase
     {
         $value = 12;
 
-        $this->assertFalse($this->thirteenCheck->isThirteen($value));
+        $this->assertFalse($this->thirteenCheck->performCheck($value));
     }
 
     public function testCheckIfValueIsThirteenAndReturnTrue()
     {
         $value = 13;
 
-        $this->assertTrue($this->thirteenCheck->isThirteen($value));
+        $this->assertTrue($this->thirteenCheck->performCheck($value));
     }
 }
