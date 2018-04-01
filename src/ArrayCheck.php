@@ -20,6 +20,6 @@ class ArrayCheck implements CheckProviderInterface
 
     public function performCheck($value): bool
     {
-        return $this->performCheck($value);
+        return $this->isArray($value);
     }
 }
