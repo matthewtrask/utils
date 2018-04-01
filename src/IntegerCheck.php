@@ -16,7 +16,6 @@ class IntegerCheck implements CheckProviderInterface
         }
 
         return false;
-
     }
 
     public function performCheck($value) : bool
