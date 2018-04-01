@@ -2,7 +2,9 @@
 
 namespace Trask\Utils\Tests;
 
+use phpDocumentor\Reflection\Types\Integer;
 use PHPUnit\Framework\TestCase;
+use Trask\Utils\IntegerCheck;
 use Trask\Utils\ThirteenCheck;
 
 class ThirteenCheckTest extends TestCase
@@ -12,9 +14,16 @@ class ThirteenCheckTest extends TestCase
      */
     private $thirteenCheck;
 
+    /**
+     * @var \PHPUnit_Framework_MockObject_MockObject | IntegerCheck
+     */
+    private $integerCheckMock;
+
     public function setup()
     {
-        $this->thirteenCheck = new ThirteenCheck();
+        $this->integerCheckMock = $this->createMock(IntegerCheck::class);
+
+        $this->thirteenCheck = new ThirteenCheck($this->integerCheckMock);
     }
 
     public function testCanGetInstance()

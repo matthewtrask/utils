@@ -25,12 +25,12 @@ class StringCheckTest extends TestCase
     public function testIsValueAStringReturnsFalse()
     {
         $string = 123;
-        $this->assertFalse($this->stringCheck->isString($string));
+        $this->assertFalse($this->stringCheck->performCheck($string));
     }
 
     public function testIsValueAStringReturnsTrue()
     {
         $string = 'Matt Trask';
-        $this->assertTrue($this->stringCheck->isString($string));
+        $this->assertTrue($this->stringCheck->performCheck($string));
     }
 }

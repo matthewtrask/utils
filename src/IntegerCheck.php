@@ -6,20 +6,21 @@ class IntegerCheck implements CheckProviderInterface
 {
     public function __invoke($value)
     {
-        return $this->isInteger($value);
-    }
-
-    public function isInteger($value) : bool
-    {
         return $this->performCheck($value);
     }
 
-    public function performCheck($value) : bool
+    private function isInteger($value) : bool
     {
         if ('integer' === gettype($value)) {
             return true;
         }
 
         return false;
+
+    }
+
+    public function performCheck($value) : bool
+    {
+        return $this->isInteger($value);
     }
 }

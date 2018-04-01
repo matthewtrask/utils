@@ -6,17 +6,17 @@ class StringCheck implements CheckProviderInterface
 {
     public function __invoke(string $string)
     {
-        return $this->isString($string);
-    }
-
-    public function isString($string) : bool
-    {
         return $this->performCheck($string);
     }
 
     public function performCheck($value) : bool
     {
-        if ('string' === gettype($value)) {
+        return $this->isString($value);
+    }
+
+    private function isString($string) : bool
+    {
+        if ('string' === gettype($string)) {
             return true;
         }
 

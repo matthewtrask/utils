@@ -26,7 +26,7 @@ class ArrayCheckTest extends TestCase
     {
         $array = '';
 
-        $this->assertFalse($this->arrayCheck->isArray($array));
+        $this->assertFalse($this->arrayCheck->performCheck($array));
     }
 
     public function testCheckIfArrayAndReturnsTrue()
@@ -37,6 +37,6 @@ class ArrayCheckTest extends TestCase
             'OMG',
         ];
 
-        $this->assertTrue($this->arrayCheck->isArray($array));
+        $this->assertTrue($this->arrayCheck->performCheck($array));
     }
 }

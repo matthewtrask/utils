@@ -9,24 +9,22 @@ class ThirteenCheck implements CheckProviderInterface
 
     const THIRTEEN = self::TEN + self::THREE;
 
+    /**
+     * @var IntegerCheck
+     */
     private $integerChecker;
 
-    public function __construct()
+    public function __construct(IntegerCheck $integerCheck)
     {
-        $this->integerChecker = new IntegerCheck();
+        $this->integerChecker = $integerCheck;
     }
 
     public function __invoke(int $value)
     {
-        return $this->isThirteen($value);
-    }
-
-    public function isThirteen($value) : bool
-    {
         return $this->performCheck($value);
     }
 
-    public function performCheck($value) : bool
+    private function isThirteen($value) : bool
     {
         if ($this->integerChecker->performCheck($value)) {
             if ($value === self::THIRTEEN) {
@@ -35,5 +33,10 @@ class ThirteenCheck implements CheckProviderInterface
         }
 
         return false;
+    }
+
+    public function performCheck($value) : bool
+    {
+        return $this->isThirteen($value);
     }
 }

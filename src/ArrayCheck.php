@@ -4,22 +4,22 @@ namespace Trask\Utils;
 
 class ArrayCheck implements CheckProviderInterface
 {
-    public function __invoke(array $array)
+    public function __invoke(array $value)
     {
-        return $this->isArray($array);
+        return $this->performCheck($value);
     }
 
-    public function isArray($array) : bool
-    {
-       return $this->performCheck($array);
-    }
-
-    public function performCheck($value): bool
+    private function isArray($value) : bool
     {
         if ('array' === gettype($value)) {
             return true;
         }
 
         return false;
+    }
+
+    public function performCheck($value): bool
+    {
+        return $this->performCheck($value);
     }
 }
