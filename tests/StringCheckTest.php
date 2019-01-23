@@ -12,7 +12,7 @@ class StringCheckTest extends TestCase
      */
     private $stringCheck;
 
-    public function setup()
+    protected function setup()
     {
         $this->stringCheck = new StringCheck();
     }
@@ -32,5 +32,11 @@ class StringCheckTest extends TestCase
     {
         $string = 'Matt Trask';
         $this->assertTrue($this->stringCheck->performCheck($string));
+    }
+
+    public function testInvoke()
+    {
+        $string = 'Matt Trask';
+        $this->assertTrue(($this->stringCheck)($string));
     }
 }

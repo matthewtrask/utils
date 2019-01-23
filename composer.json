@@ -18,5 +18,10 @@
    "psr-4": {
      "Trask\\Utils\\": "src/"
    }
+ },
+ "autoload-dev": {
+   "psr-4": {
+     "Trask\\Utils\\Tests\\": "tests/"
+   }
  }
 }

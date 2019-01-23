@@ -12,7 +12,7 @@ class ArrayCheckTest extends TestCase
      */
     private $arrayCheck;
 
-    public function setup()
+    protected function setup()
     {
         $this->arrayCheck = new ArrayCheck();
     }
@@ -25,7 +25,6 @@ class ArrayCheckTest extends TestCase
     public function testChecksIfArrayAndReturnsFalse()
     {
         $array = '';
-
         $this->assertFalse($this->arrayCheck->performCheck($array));
     }
 
@@ -36,7 +35,12 @@ class ArrayCheckTest extends TestCase
             'Foo',
             'OMG',
         ];
-
         $this->assertTrue($this->arrayCheck->performCheck($array));
+    }
+
+    public function testInvoke()
+    {
+        $array = [];
+        $this->assertTrue(($this->arrayCheck)($array));
     }
 }

@@ -11,11 +11,7 @@ class ArrayCheck implements CheckProviderInterface
 
     private function isArray($value) : bool
     {
-        if ('array' === gettype($value)) {
-            return true;
-        }
-
-        return false;
+        return 'array' === gettype($value);
     }
 
     public function performCheck($value): bool
