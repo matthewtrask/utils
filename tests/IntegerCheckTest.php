@@ -12,7 +12,7 @@ class IntegerCheckTest extends TestCase
      */
     private $integerCheck;
 
-    public function setup()
+    protected function setup()
     {
         $this->integerCheck = new IntegerCheck();
     }
@@ -30,7 +30,13 @@ class IntegerCheckTest extends TestCase
 
     public function testPerformCheckWithIntegerIsTrue()
     {
-        $string = 123;
-        $this->assertTrue($this->integerCheck->performCheck($string));
+        $integer = 123;
+        $this->assertTrue($this->integerCheck->performCheck($integer));
+    }
+
+    public function testInvoke()
+    {
+        $integer = 123;
+        $this->assertTrue(($this->integerCheck)($integer));
     }
 }

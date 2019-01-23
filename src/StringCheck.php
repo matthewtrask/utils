@@ -16,10 +16,6 @@ class StringCheck implements CheckProviderInterface
 
     private function isString($string) : bool
     {
-        if ('string' === gettype($string)) {
-            return true;
-        }
-
-        return false;
+        return 'string' === gettype($string);
     }
 }

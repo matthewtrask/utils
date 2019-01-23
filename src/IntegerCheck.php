@@ -4,18 +4,14 @@ namespace Trask\Utils;
 
 class IntegerCheck implements CheckProviderInterface
 {
-    public function __invoke($value)
+    public function __invoke(int $value)
     {
         return $this->performCheck($value);
     }
 
     private function isInteger($value) : bool
     {
-        if ('integer' === gettype($value)) {
-            return true;
-        }
-
-        return false;
+        return 'integer' === gettype($value);
     }
 
     public function performCheck($value) : bool
